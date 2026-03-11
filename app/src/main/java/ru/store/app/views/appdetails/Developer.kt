@@ -31,7 +31,7 @@ fun Developer(
             Text(text = name)
             Text(text = stringResource(R.string.app_details_developer))
         }
-        IconButton(onClick = onClick) {
+        IconButton(onClick = {}) {
             Icon(
                 imageVector = Icons.AutoMirrored.Default.KeyboardArrowRight,
                 contentDescription = null,

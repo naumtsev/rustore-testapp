@@ -11,6 +11,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -44,8 +45,10 @@ fun AppScreen() {
         ) {
             composable("app_list") {
                 AppListScreen(onAppClick = { appName ->
-                    val encodedAppName = Uri.encode(appName)
-                    navController.navigate("app_details/$encodedAppName")
+                    if (navController.currentBackStackEntry?.lifecycle?.currentState == Lifecycle.State.RESUMED) {
+                        val encodedAppName = Uri.encode(appName)
+                        navController.navigate("app_details/$encodedAppName")
+                    }
                 })
             }
 
@@ -59,7 +62,9 @@ fun AppScreen() {
                     modifier = Modifier,
                     appId = appName,
                     onBackClick = {
-                        navController.popBackStack()
+                        if (navController.currentBackStackEntry?.lifecycle?.currentState == Lifecycle.State.RESUMED) {
+                            navController.popBackStack()
+                        }
                     }
                 )
             }
