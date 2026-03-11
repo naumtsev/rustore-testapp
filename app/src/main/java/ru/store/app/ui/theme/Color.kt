@@ -1,4 +1,4 @@
-package ru.store.testapp.ui.theme
+package ru.store.app.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

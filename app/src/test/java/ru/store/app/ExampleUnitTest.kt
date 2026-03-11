@@ -1,4 +1,4 @@
-package ru.store.testapp
+package ru.store.app
 
 import org.junit.Test
 
