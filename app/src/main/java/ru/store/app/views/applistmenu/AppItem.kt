@@ -1,4 +1,4 @@
-package ru.store.app.views.applist
+package ru.store.app.views.applistmenu
 
 import ru.store.app.common.Topic
 

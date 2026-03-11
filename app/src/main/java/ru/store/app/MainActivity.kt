@@ -19,7 +19,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import ru.store.app.ui.theme.RuStoreAppTheme
 import ru.store.app.views.appdetails.AppDetailsScreen
-import ru.store.app.views.applist.AppListScreen
+import ru.store.app.views.applistmenu.AppListScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
